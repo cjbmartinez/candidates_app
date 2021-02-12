@@ -1,0 +1,44 @@
+
+<nav class="indigo darken-4">
+  <div class="nav-wrapper">
+    <a href="#" class="brand-logo center">Talkpush</a>
+  </div>
+</nav>
+
+<div class="container">
+  <h2 class="header center text-darken-3">Candidates Google Sheet</h1>
+    <div class="row center">
+    <button class="btn-large waves-effect waves-light orange darken-3" id="syncButton">Sync to Talkpush API</button>
+  </div>
+  <div class="row center">
+    <table>
+      <thead>
+        <tr>
+            <th>Applied On</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email</th>
+            <th>Phone Number</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @candidates.each do |candidate| %>
+          <tr>
+            <% candidate.each do |candidate_info| %>
+              <td> <%= candidate_info %> </td>
+            <% end %>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<footer class="page-footer indigo darken-4">
+  <div class="footer-copyright">
+    <div class="container">
+      Talkpush Exercise
+    </div>
+  </div>
+</footer>
