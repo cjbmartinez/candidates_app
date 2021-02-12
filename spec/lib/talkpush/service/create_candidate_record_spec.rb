@@ -23,13 +23,13 @@ RSpec.describe Talkpush::Service::CreateCandidateRecord do
 
     context 'when valid parameters' do
       let(:mock_client) { instance_double(Talkpush::Client) }
-      let(:path) { "campaigns/4339/campaign_invitations"}
+      let(:path) { "campaigns/12345/campaign_invitations"}
       let(:mock_response) { { message: 'Succesfully created candidate'} }
 
       let(:mock_json) do
         {
-          "api_key": '48530ba23eef6b45ffbc95d7c20a60b9',
-          "api_secret": 'e2f724ba060f82ddf58923af494578a7',
+          "api_key": '123',
+          "api_secret": '1234',
           "campaign_invitation": {
             "first_name": first_name,
             "last_name": last_name,

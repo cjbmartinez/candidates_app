@@ -1,10 +1,6 @@
 module Talkpush
   module Service
     class CreateCandidateRecord
-      CAMPAIGN_ID = "4339".freeze
-      API_KEY = "48530ba23eef6b45ffbc95d7c20a60b9".freeze
-      API_SECRET = "e2f724ba060f82ddf58923af494578a7".freeze
-
       def initialize(first_name:, last_name:, email:, phone:)
         @first_name = first_name
         @last_name = last_name
@@ -28,8 +24,8 @@ module Talkpush
 
       def post_candidate_json
         {
-          "api_key": API_KEY,
-          "api_secret": API_SECRET,
+          "api_key": ENV.fetch("TALKPUSH_API_KEY"),
+          "api_secret": ENV.fetch("TALKPUSH_SECRET_KEY"),
           "campaign_invitation": {
             "first_name": first_name,
             "last_name": last_name,
@@ -40,7 +36,7 @@ module Talkpush
       end
 
       def post_candidate_path
-        ["campaigns", CAMPAIGN_ID, "campaign_invitations"].join("/")
+        ["campaigns", ENV.fetch("TALKPUSH_CAMPAIGN_ID"), "campaign_invitations"].join("/")
       end
     end
   end

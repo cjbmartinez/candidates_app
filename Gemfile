@@ -25,7 +25,7 @@ gem "jquery-rails"
 gem "google_drive"
 gem 'http', '~> 4.0'
 gem 'rails_12factor', group: :production
-#gem 'therubyracer'
+gem 'dotenv-rails', groups: [:development, :test]
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
